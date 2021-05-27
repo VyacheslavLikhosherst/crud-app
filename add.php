@@ -2,9 +2,9 @@
 include "./classes/classAdd.php";
 
 if(isset($_POST['name']) && isset($_POST['age']) && isset($_POST['email'])) {
-    $name = $_POST['name'];
-    $age = $_POST["age"];
-    $email = $_POST["email"];
+    $name = str_replace("'", '', htmlspecialchars($_POST['name']));
+    $age = htmlspecialchars($_POST["age"]);
+    $email = str_replace("'", '', htmlspecialchars($_POST["email"]));
 
     // Adding a new user
     $add = new Add($name, $age, $email);
@@ -12,6 +12,7 @@ if(isset($_POST['name']) && isset($_POST['age']) && isset($_POST['email'])) {
     $add->connect();
     $add->request();
     $add->close();
+
 }
 ?>
 
@@ -32,22 +33,20 @@ if(isset($_POST['name']) && isset($_POST['age']) && isset($_POST['email'])) {
     <ul>
         <li><a href="index.php">Пользователи</a></li>
         <li><a href="add.php">Добавление нового пользователя</a></li>
-        <li><a href="edit.php">Редактирование</a></li>
-        <li><a href="delete.php">Удаление пользователя</a></li>
     </ul>
 </div>
 <form class="edit-form" action="add.php" method="post">
     <div class="mb-3">
         <label class="form-label">Имя:</label>
-        <input type="text" class="form-control" name="name">
+        <input type="text" class="form-control" required name="name" pattern="[0-9]{,3}">
     </div>
     <div class="mb-3">
         <label class="form-label">Возраст:</label>
-        <input type="number" class="form-control" name="age">
+        <input type="number" class="form-control" required name="age" maxlength="5">
     </div>
     <div class="mb-3">
         <label class="form-label">Email:</label>
-        <input type="email" class="form-control" name="email">
+        <input type="email" class="form-control" required name="email" maxlength="60">
     </div>
     <button type="submit" class="btn btn-primary">Добавить</button>
 </form>
