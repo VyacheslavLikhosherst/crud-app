@@ -41,31 +41,42 @@ li a:hover {
 main {
     width: 100%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
-table {
+.table-limiter {
     border-collapse: none;
     text-indent: initial;
     border-spacing: 0px;
     margin-top: 20px;
-    border: 2px solid black;
+    /*border: 2px solid black;*/
     width: 1000px;
 }
 
+.bold {
+    font-weight: bold;
+
+}
+
 table tr {
-    border: 1px solid black;
+    /*border: 1px solid black;*/
 
 }
 
-table tr:first-child {
-    background: black;
-    color: #ffffff;
-}
 td {
     font-family: Roboto sans-serif;
     text-align: center;
-    border: 1px solid black;
+    /*border: 1px solid black;*/
 }
+
+.edit-item {
+    cursor: pointer;
+}
+
+.delete-item {
+    cursor: pointer;
+}
+
 
 
