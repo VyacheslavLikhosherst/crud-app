@@ -1,0 +1,23 @@
+
+
+body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.register-form {
+    width: 400px;
+}
+
+p {
+    margin-top: 10px;
+}
+
+strong a {
+    text-decoration: none;
+}
