@@ -1,4 +1,10 @@
-<?php require_once "./classes/classUsers.php"; ?>
+<?php
+session_start();
+if(!$_SESSION['user']) {
+    header('Location: login.php');
+}
+require_once "./classes/classUsers.php";
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,6 +20,7 @@
     <ul>
         <li><a href="index.php">Пользователи</a></li>
         <li><a href="add.php">Добавление нового пользователя</a></li>
+        <li><button type="button" class="btn btn-success"><a href="exit.php">Выйти</a></button></li>
     </ul>
 </div>
 <main>
