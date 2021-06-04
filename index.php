@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 if(!$_SESSION['user']) {
     header('Location: login.php');
 }
@@ -30,6 +31,7 @@ require_once "./classes/classUsers.php";
             <input type="text" name="search" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
         </div>
         <button type="submit" class="btn btn-success" name="submit">Найти</button>
+        <? echo "fflf" . $_SESSION['name']; ?>
     </form>
     <?php
     $users = new Users();

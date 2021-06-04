@@ -1,6 +1,6 @@
 <?php
 class Connection {
-    public $host = 'crud-app'; // server address
+    public $host = 'localhost'; // server address
     public $database = 'crud'; // database name
     public $user = 'root'; // username
     public $password = 'root'; // password
