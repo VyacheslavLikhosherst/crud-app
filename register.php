@@ -48,6 +48,11 @@ if($_SESSION['user']) {
         echo "<div class=\"alert alert-danger\" role=\"alert\">$_SESSION[message]</div>";
         unset($_SESSION['message']);
     }
+
+    if($_SESSION['email']) {
+        echo "<div class=\"alert alert-danger\" role=\"alert\">$_SESSION[email]</div>";
+        unset($_SESSION['email']);
+    }
     ?>
 </form>
 </body>

@@ -22,6 +22,7 @@ require_once "./classes/classUsers.php";
         <li><a href="index.php">Пользователи</a></li>
         <li><a href="add.php">Добавление нового пользователя</a></li>
         <li><button type="button" class="btn btn-success"><a href="exit.php">Выйти</a></button></li>
+        <li><button type="button" class="btn btn-warning"><a href="chat/chat.php">Чат</a></button></li>
     </ul>
 </div>
 <main>
@@ -31,7 +32,6 @@ require_once "./classes/classUsers.php";
             <input type="text" name="search" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
         </div>
         <button type="submit" class="btn btn-success" name="submit">Найти</button>
-        <? echo "fflf" . $_SESSION['name']; ?>
     </form>
     <?php
     $users = new Users();
