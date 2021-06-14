@@ -8,6 +8,7 @@ class Login extends Connection {
     public $link;
     public $query;
 
+
     // Class constructor
     function __construct($login, $pass) {
         $this->login = $login;
@@ -25,7 +26,10 @@ class Login extends Connection {
         $result = mysqli_query($this->link, $this->query);
         $rows = mysqli_num_rows($result);
         if($rows > 0) {
-            $_SESSION['user'] = true;
+            $result = mysqli_fetch_assoc(mysqli_query($this->link, "SELECT `id` FROM registered_users WHERE `login` = '$this->login'"));
+            $id = $result['id'];
+            $_SESSION['user'] = $this->login;
+            $_SESSION['id'] = $id;
             header('Location: ../index.php');
         } else {
             $_SESSION['message'] = 'Не правильный логин или пароль';

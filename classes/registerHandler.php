@@ -33,7 +33,15 @@ class Register extends Connection {
     // User registration request
     function requestRegister() {
         if($this->pass == $this->passRepeat) {
-            $result = mysqli_query($this->link, $this->query);
+            $emailQuery = mysqli_query($this->link, "SELECT `email` FROM `registered_users` WHERE `email` = '$this->email'");
+            $rows = mysqli_num_rows($emailQuery);
+            if($rows > 1) {
+                $_SESSION['email'] = 'Этот аккаунт уже зарегистрирован!';
+                header('Location: ../register.php');
+                exit();
+            } else {
+                $result = mysqli_query($this->link, $this->query);
+            }
             if($result) {
                 header('Location: ../login.php');
             } else {
