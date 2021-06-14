@@ -1,0 +1,42 @@
+
+.chat {
+    padding: 20px;
+}
+
+
+.get-messages {
+    margin-top: 10px;
+}
+
+.send-messages {
+    margin-top: 10px;
+}
+
+.form-send-mg {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    width: 1000px;
+    align-items: center;
+    margin: 50px auto;
+    border: 2px solid gold;
+    border-radius: 50px;
+}
+
+.form-send-mg label {
+    margin-left: 10px;
+}
+
+.form-send-mg button {
+    margin-left: 20px;
+}
+
+.id-user-get {
+    width: 100px;
+    margin-left: 10px;
+}
+.msg {
+    width: 400px;
+    margin-left: 10px;
+}
+
